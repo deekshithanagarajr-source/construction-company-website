@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" contents="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Gold Standard Construction</title>
+
+<style>
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+}
+
+/* NAVBAR */
+#navbar{
+   display:flex;
+   align-items:center;
+   position:relative;
+}
+#logo{
+  margin: 34px 56px;
+  height:100px;
+  margin: 10px 10px;
+}
+#navbar ul{
+   display:flex;
+}
+#navbar::before{
+  content: "";
+  background-color:black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity:0.6;
+}
+#navbar ul li{
+   list-style:none;
+   font-size:1rem;
+}
+#navbar ul li a{
+   color:white;
+   display: block;
+   padding:3px 22px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+#navbar ul li a:hover{
+   color:black;
+   background-color:white;
+}
+
+/* HEADER SECTION */
+.services-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+}
+.services-header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #222;
+}
+.services-header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* SERVICES GRID */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 80px;
+}
+
+/* SERVICE CARD */
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.service-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+.service-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* POPUP MODAL (COMMON STYLE) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 420px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+}
+.closeC, .closeR {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .services-container {
+        padding: 20px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+<div id="logo">
+<img src="logo.jpg" alt="gold standard construction" width="90px" height="90px">
+</div>
+<ul>
+<li class="item"><a href="Home.html">Home</a></li>
+<li class="item"><a href="Services.html">Services</a></li>
+<li class="item"><a href="About us.html">About us</a></li>
+<li class="item"><a href="Contact us.html">Contact us</a></li>
+</ul>
+</nav>
+
+<!-- HEADER -->
+<section class="services-header">
+    <h1>Our Construction Services</h1>
+    <p>We provide high-quality, reliable, and professional construction solutions from start to finish.</p>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-container">
+
+    <!-- RESIDENTIAL CARD -->
+    <div class="service-card" id="residentialCard">
+        <img src="5.jpg" alt="Residential Construction">
+        <h3>Residential Construction</h3>
+        <p>We build villas, apartments, and premium homes with modern engineering and top-quality materials.</p>
+    </div>
+
+    <!-- COMMERCIAL CARD -->
+    <div class="service-card" id="commercialCard">
+        <img src="6.jpg" alt="Commercial Construction">
+        <h3>Commercial Projects</h3>
+        <p>We construct offices, shopping complexes, showrooms, and corporate buildings.</p>
+    </div>
+
+</section>
+
+<!-- RESIDENTIAL POPUP -->
+<div id="residentialModal" class="modal">
+    <div class="modal-content">
+        <span class="closeR">&times;</span>
+        <h2>Our Residential Projects</h2>
+        <ul style="text-align:left; line-height:1.8; margin-top:15px;">
+            <li>🏡 Green Valley Luxury Villas</li>
+            <li>🏘️ Sunshine Apartments – Block A & B</li>
+            <li>🏠 Lakeview Independent Homes</li>
+            <li>🏡 Hilltop Premium Villa Community</li>
+            <li>🏘️ Royal Enclave Gated Society</li>
+        </ul>
+    </div>
+</div>
+
+<!-- COMMERCIAL POPUP -->
+<div id="commercialModal" class="modal">
+    <div class="modal-content">
+        <span class="closeC">&times;</span>
+        <h2>Our Commercial Projects</h2>
+        <ul style="text-align:left; line-height:1.8; margin-top:15px;">
+            <li>🏢 Urban Heights Corporate Office</li>
+            <li>🏬 Galaxy Shopping Mall</li>
+            <li>🏩 Bluestone Business Center</li>
+            <li>🏢 Metroline IT Park</li>
+            <li>🏪 Royal Plaza Showroom Block</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+// RESIDENTIAL OPEN
+document.getElementById("residentialCard").addEventListener("click", () => {
+    document.getElementById("residentialModal").style.display = "flex";
+});
+
+// COMMERCIAL OPEN
+document.getElementById("commercialCard").addEventListener("click", () => {
+    document.getElementById("commercialModal").style.display = "flex";
+});
+
+// RESIDENTIAL CLOSE
+document.querySelector(".closeR").onclick = () => {
+    document.getElementById("residentialModal").style.display = "none";
+};
+
+// COMMERCIAL CLOSE
+document.querySelector(".closeC").onclick = () => {
+    document.getElementById("commercialModal").style.display = "none";
+};
+
+// CLOSE WHEN CLICKING OUTSIDE
+window.addEventListener("click", (e) => {
+    if (e.target === document.getElementById("residentialModal")) {
+        document.getElementById("residentialModal").style.display = "none";
+    }
+    if (e.target === document.getElementById("commercialModal")) {
+        document.getElementById("commercialModal").style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>

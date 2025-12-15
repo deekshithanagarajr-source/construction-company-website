@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" contents="width=device-width,initial-scale=1.0>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title> gold standard construction </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Construction Company</title>
+    <style>
+        /* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+section {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+}
+
+/* NAVBAR */
+#navbar{
+   display:flex;
+   align-items:center;
+   position:relative;
+}
+/* logo and Image */
+#logo{
+  margin: 34px 56px;
+}
+/* list styling */
+#logo{
+  height:100px;
+  margin: 10px 10px;
+}
+
+#navbar ul{
+   display:flex;
+}
+#navbar::before{
+  content: "";
+  background-color:black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity:0.6;
+}
+#navbar ul li{
+   list-style:none;
+   font-size:1rem;
+}
+#navbar ul li a{
+   color:white;
+   display: block;
+   padding:3px 22px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+#navbar ul li a:hover{
+   color:black;
+   background-color: white;
+}
+
+/* HERO SECTION */
+.about-hero {
+    height: 45vh;
+    background: url("construction-bg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:purple;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color:blueviolet;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color:orange;
+}
+
+/* MISSION & VISION */
+.mission-vision {
+    display: flex;
+    gap: 30px;
+    padding: 40px 80px;
+}
+
+.mv-box {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid purple;
+    color:green;
+}
+
+/* WHY CHOOSE US */
+.why-us {
+    padding: 60px 80px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+h4{
+    color:purple;
+    font-size:23px;
+}
+
+.why-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid blue;
+}
+
+/* VALUES */
+.values-section {
+    padding: 60px 80px;
+    background:black;
+    color:white;
+}
+
+.values-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+    color:white;
+}
+
+/* ACHIEVEMENTS */
+.achievements {
+    padding: 60px 80px;
+    background-color:yellow;
+    text-align: center;
+}
+
+.achievements-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ach-card {
+    background: #fff;
+    width: 180px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.ach-card h3 {
+    color: hsl(154, 100%, 50%);
+    font-size: 2.2rem;
+}
+
+/* TEAM SECTION */
+.team-section {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-card {
+    width: 230px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.photo {
+    height: 180px;
+    background: #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .mission-vision {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .about-section,
+    .why-us,
+    .achievements,
+    .team-section {
+        padding: 40px 20px;
+    }
+}
+/* POPUP MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 420px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid purple;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #0A66C2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.linkedin-btn:hover {
+    background: #004182;
+}
+.satya { background-image: url('satya.jpg'); background-size: cover; background-position: center; }
+.ginni { background-image: url('ginni.jpg'); background-size: cover; background-position: center; }
+.indra { background-image: url('indra.jpg'); background-size: cover; background-position: center; }
+.barra { background-image: url('barra.jpg'); background-size: cover; background-position: center; }
+
+
+    </style>
+</head>
+<body>
+<nav id="navbar">
+<div id="logo">
+<img src="logo.jpg" alt="gold standard construction" width="90px" height="90px">
+</div>
+<ul>
+<li class="item"><a href="Home.html">Home</a></li>
+<li class="item"><a href="Services.html">Services</a></li>
+<li class="item"><a href="About us.html">About us</a></li>
+<li class="item"><a href="Contact us.html">Contact us</a></li>
+</ul>
+</nav>
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="hero-text">
+            <h1>About Our Company</h1>
+            <p>Building your dreams with strength, reliability, and excellence.</p>
+        </div>
+    </section>
+
+    <!-- COMPANY OVERVIEW -->
+    <section class="about-section">
+        <h2>Who We Are</h2>
+        <p>
+            Gold standard Constructions is one of India’s leading construction and infrastructure development companies.
+            With over 15+ years of experience, we have successfully delivered residential, commercial, industrial,
+            and government projects across major cities. Our commitment to quality, innovation, and timely delivery
+            has earned us the trust of thousands of clients.
+        </p>
+        <p>
+            We combine engineering excellence with modern technology to create sustainable and durable structures.
+            Every project we take up stands as a symbol of precision, engineering expertise, and strong foundation.
+        </p>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="mission-vision">
+        <div class="mv-box">
+            <h3>Our Mission</h3>
+            <p>
+                To deliver world-class construction services with a focus on safety, quality, and customer satisfaction.
+                We strive to turn client ideas into solid, lifelong structures.
+            </p>
+        </div>
+        <div class="mv-box">
+            <h3>Our Vision</h3>
+            <p>
+                To become the most trusted and innovative construction brand, known for excellence, sustainability,
+                and modern engineering across the globe.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <h2>Why Choose Us?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <h4>✔ Experienced Team</h4>
+                <p>Our engineers, architects, and workers bring decades of combined expertise.</p>
+            </div>
+
+            <div class="why-card">
+                <h4>✔ Quality Materials</h4>
+                <p>We use certified, premium-grade construction materials ensuring durability.</p>
+            </div>
+
+            <div class="why-card">
+                <h4>✔ On-Time Delivery</h4>
+                <p>We follow strict planning, ensuring timely completion of all projects.</p>
+            </div>
+
+            <div class="why-card">
+                <h4>✔ Modern Technology</h4>
+                <p>We implement advanced construction techniques and machinery.</p>
+            </div>
+
+            <div class="why-card">
+                <h4>✔ 100% Transparency</h4>
+                <p>From planning to budgeting, every process is open and customer-centric.</p>
+            </div>
+
+            <div class="why-card">
+                <h4>✔ Trusted by Thousands</h4>
+                <p>Delivered 450+ successful projects with an excellent satisfaction rate.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+    <section class="values-section">
+        <h2>Our Core Values</h2>
+        <ul>
+            <li>Integrity and Honesty</li>
+            <li>Quality and Commitment</li>
+            <li>Innovation and Improvement</li>
+            <li>Safety First</li>
+            <li>Customer Satisfaction</li>
+            <li>Environmental Responsibility</li>
+        </ul>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements">
+        <h2>Our Achievements</h2>
+        <div class="achievements-grid">
+            <div class="ach-card">
+                <h3>450+</h3>
+                <p>Completed Projects</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>15+</h3>
+                <p>Years of Experience</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>120+</h3>
+                <p>Engineers & Staff</p>
+            </div>
+
+            <div class="ach-card">
+                <h3>50+</h3>
+                <p>Ongoing Projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+    <h2>Meet Our Leadership Team</h2>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="photo satya" data-id="satya"></div>
+            <h3>Satya Nadella</h3>
+            <p>CEO</p>
+        </div>
+
+        <div class="team-card">
+            <div class="photo ginni" data-id="ginni"></div>
+            <h3>Ginni Rometty</h3>
+            <p>CEO</p>
+        </div>
+
+        <div class="team-card">
+            <div class="photo indra" data-id="indra"></div>
+            <h3>Indra nooyi</h3>
+            <p>CEO</p>
+        </div>
+
+        <div class="team-card">
+            <div class="photo barra" data-id="barra"></div>
+            <h3>Mary Barra</h3>
+            <p>CEO</p>
+        </div>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalPhoto" class="profile-img">
+    <h2 id="modalName"></h2>
+    <p id="modalRole"></p>
+    <p id="modalBio"></p>
+    <a id="modalLink" target="_blank" class="linkedin-btn">Visit LinkedIn Profile</a>
+  </div>
+</div>
+
+<script>
+const leaders = {
+    satya: {
+        name: "Satya Nadella",
+        role: "CEO, Microsoft",
+        bio: "Leader of Microsoft’s cloud and AI transformation.",
+        photo: "satya.jpg",
+        linkedin: "https://www.linkedin.com/in/satyanadella/"
+    },
+    ginni: {
+        name: "Ginni Rometty",
+        role: "Former CEO, IBM",
+        bio: "Ginni Rometty led IBM through major technological transformation and expansion.",
+        photo: "ginni.jpg",
+        linkedin: "https://www.linkedin.com/in/ginnirometty/"
+    },
+    indra: {
+        name: "Indra Nooyi",
+        role: "Former CEO, PepsiCo",
+        bio: "Indra Nooyi is known for strategic leadership and global expansion at PepsiCo.",
+        photo: "indra.jpg",
+        linkedin: "https://www.linkedin.com/in/indranooyi/"
+    },
+    barra: {
+        name: "Mary Barra",
+        role: "CEO, General Motors",
+        bio: "First female CEO of a major automaker; drives EV revolution.",
+        photo: "barra.jpg",
+        linkedin: "https://www.linkedin.com/in/mary-barra/"
+    }
+};
+
+// OPEN POPUP
+document.querySelectorAll(".photo").forEach(photo => {
+    photo.addEventListener("click", () => {
+        let id = photo.getAttribute("data-id");
+
+        document.getElementById("modalPhoto").src = leaders[id].photo;
+        document.getElementById("modalName").textContent = leaders[id].name;
+        document.getElementById("modalRole").textContent = leaders[id].role;
+        document.getElementById("modalBio").textContent = leaders[id].bio;
+        document.getElementById("modalLink").href = leaders[id].linkedin;
+
+        document.getElementById("profileModal").style.display = "flex";
+    });
+});
+
+// CLOSE
+document.querySelector(".close").onclick = () => {
+    document.getElementById("profileModal").style.display = "none";
+};
+window.onclick = e => {
+    if (e.target == document.getElementById("profileModal")) {
+        document.getElementById("profileModal").style.display = "none";
+    }
+};
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
